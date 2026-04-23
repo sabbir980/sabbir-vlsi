@@ -61,17 +61,8 @@
   .project-tags { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
   .tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; border: 0.5px solid var(--border); color: var(--text-muted); }
 
-  /* PDF Section */
+  /* PDF Section Styles */
   .pdf-section { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: 20px; padding: 28px; }
-  .pdf-info-box {
-    background: var(--accent-light); border: 0.5px solid rgba(30,95,168,0.2);
-    border-radius: 12px; padding: 16px 20px; margin-bottom: 24px;
-    display: flex; align-items: flex-start; gap: 12px;
-  }
-  .pdf-info-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
-  .pdf-info-text { font-size: 13px; color: var(--accent); line-height: 1.6; }
-  .pdf-info-text strong { font-weight: 500; display: block; margin-bottom: 4px; color: var(--accent); }
-
   .pdf-list-static { display: flex; flex-direction: column; gap: 10px; }
   .pdf-item-static {
     display: flex; align-items: center; justify-content: space-between;
@@ -89,20 +80,6 @@
     transition: background 0.15s;
   }
   .btn-view-link:hover { background: var(--accent-light); }
-
-  /* Add PDF instructions */
-  .add-pdf-guide {
-    margin-top: 24px; border-top: 0.5px solid var(--border); padding-top: 20px;
-  }
-  .guide-title { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 14px; }
-  .guide-steps { display: flex; flex-direction: column; gap: 10px; }
-  .guide-step { display: flex; align-items: flex-start; gap: 12px; font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-  .step-num {
-    width: 22px; height: 22px; border-radius: 50%; background: var(--accent-light);
-    color: var(--accent); font-size: 11px; font-weight: 500;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
-  }
-  code { background: rgba(26,26,24,0.07); padding: 2px 7px; border-radius: 4px; font-size: 12px; color: var(--text); }
 
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
   .skill-item { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; transition: border-color 0.2s; }
@@ -199,16 +176,6 @@
   <section id="pdf" class="reveal">
     <p class="section-label">Publications, Reports & Resume</p>
     <div class="pdf-section">
-
-      <div class="pdf-info-box">
-        <div class="pdf-info-icon">💡</div>
-        <div class="pdf-info-text">
-          <strong>How to add your PDF files</strong>
-          Upload your PDF files to your GitHub repository, then replace the links below with your file links. See instructions at the bottom of this section.
-        </div>
-      </div>
-
-      <!-- PDF LIST — replace href links with your actual GitHub file links -->
       <div class="pdf-list-static">
 
         <div class="pdf-item-static">
@@ -245,34 +212,6 @@
         </div>
 
       </div>
-
-      <!-- HOW TO ADD PDF GUIDE -->
-      <div class="add-pdf-guide">
-        <p class="guide-title">How to add your PDF files to this portfolio</p>
-        <div class="guide-steps">
-          <div class="guide-step">
-            <div class="step-num">1</div>
-            <div>Go to your GitHub repository: <code>github.com/sabbir/sabbir.github.io</code></div>
-          </div>
-          <div class="guide-step">
-            <div class="step-num">2</div>
-            <div>Click <strong>"Add file" → "Upload files"</strong> and upload your PDF (e.g. <code>resume.pdf</code>)</div>
-          </div>
-          <div class="guide-step">
-            <div class="step-num">3</div>
-            <div>Click <strong>"Commit changes"</strong> to save the file</div>
-          </div>
-          <div class="guide-step">
-            <div class="step-num">4</div>
-            <div>Open this <code>index.html</code> file in GitHub, click the pencil icon, and replace the link <code>resume.pdf</code> with your actual file name. Then commit changes.</div>
-          </div>
-          <div class="guide-step">
-            <div class="step-num">5</div>
-            <div>Anyone who visits your portfolio can now click "View PDF" and see your files! 🎉</div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -295,7 +234,7 @@
     <div style="margin-top: 32px; background: var(--accent-light); border: 0.5px solid rgba(30,95,168,0.15); border-radius: 16px; padding: 24px 28px;">
       <p style="font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px;">Research Interest</p>
       <p style="font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 8px;">VLSI & Semiconductor Physics</p>
-      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7;">Focused on integrated circuit design, nanoscale device physics, low-power digital and analog circuit optimization, and semiconductor device modeling. Keen interest in exploring next-generation transistor technologies and their physical behavior at the quantum scale.</p>
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7;">Focused on integrated circuit design, nanoscale device physics, low-power digital and analog circuit optimization, and semiconductor device modeling.</p>
     </div>
   </section>
 
@@ -323,45 +262,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
 </script>
- <!-- PDF / Documents Section -->
-<section id="documents">
-  <h2>My Documents</h2>
-  
-  <div class="pdf-grid">
-    
-    <!-- PDF 1 -->
-    <div class="pdf-card">
-      <h3>📄 Layout Design With Microwind.pdf</h3>
-      <p>My professional resume</p>
-      <a href="full adder.pdf" target="_blank">🔍 View PDF</a>
-      <a href="full adder.pdf" download>⬇️ Download</a>
-    </div>
 
-    <!-- PDF 2 -->
-    <div class="pdf-card">
-      <h3>📄 Certificate 1</h3>
-      <p>My certification document</p>
-      <a href="full adder.pdf" target="_blank">🔍 View PDF</a>
-      <a href="full adder.pdf" download>⬇️ Download</a>
-    </div>
-
-    <!-- PDF 3 -->
-    <div class="pdf-card">
-      <h3>📄 Certificate 2</h3>
-      <p>My certification document</p>
-      <a href="improved Sram design compression with excisting sram .pdf" target="_blank">🔍 View PDF</a>
-      <a href="improved Sram design compression with excisting sram .pdf" download>⬇️ Download</a>
-    </div>
-
-    <!-- PDF 4 -->
-    <div class="pdf-card">
-      <h3>📄 Project Report</h3>
-      <p>My project documentation</p>
-      <a href="sram snm analysis in cadence.pdf" target="_blank">🔍 View PDF</a>
-      <a href="sram snm analysis in cadence.pdf" download>⬇️ Download</a>
-    </div>
-
-  </div>
-</section>
 </body>
 </html>
